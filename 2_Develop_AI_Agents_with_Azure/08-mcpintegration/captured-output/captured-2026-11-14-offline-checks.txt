@@ -1,0 +1,20 @@
+test_blank_input_and_quit_do_not_call_the_model (test_mcp_lab.LocalMCPTests.test_blank_input_and_quit_do_not_call_the_model) ... ok
+test_chained_calls_return_only_current_results_with_matching_ids (test_mcp_lab.LocalMCPTests.test_chained_calls_return_only_current_results_with_matching_ids) ... ok
+test_error_empty_and_multiple_text_results_are_handled_explicitly (test_mcp_lab.LocalMCPTests.test_error_empty_and_multiple_text_results_are_handled_explicitly) ... ok
+test_failed_chat_cleans_up_the_created_agent_version (test_mcp_lab.LocalMCPTests.test_failed_chat_cleans_up_the_created_agent_version) ... ok
+test_real_stdio_server_returns_expected_sample_decisions (test_mcp_lab.LocalMCPTests.test_real_stdio_server_returns_expected_sample_decisions) ... Executing <Task pending name='Task-22' coro=<LocalMCPTests.test_real_stdio_server_returns_expected_sample_decisions() running at [REPOSITORY_ROOT]\2_Develop_AI_Agents_with_Azure\08-mcpintegration\test_mcp_lab.py:72> wait_for=<Future pending cb=[Task.task_wakeup()] created at [USER_PROFILE]\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py:460> cb=[_run_until_complete_cb() at [USER_PROFILE]\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py:181] created at [USER_PROFILE]\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py:101> took 0.114 seconds
+[Server] Starting the sample Inventory MCP server over stdio.
+[11/14/26 22:26:08] INFO     Starting MCP server 'Inventory'   transport.py:242
+                             with transport 'stdio'                            
+[Server tool] Returning sample inventory levels for 10 products.
+[Server tool] Returning sample last-week sales for 10 products.
+ok
+test_unknown_tool_is_rejected_before_calling_server (test_mcp_lab.LocalMCPTests.test_unknown_tool_is_rejected_before_calling_server) ... ok
+test_approval_rounds_keep_matching_request_and_response_ids (test_mcp_lab.RemoteMCPTests.test_approval_rounds_keep_matching_request_and_response_ids) ... ok
+test_failed_response_deletes_only_the_created_version (test_mcp_lab.RemoteMCPTests.test_failed_response_deletes_only_the_created_version) ... ok
+test_foreign_server_and_failed_remote_calls_are_not_approved (test_mcp_lab.RemoteMCPTests.test_foreign_server_and_failed_remote_calls_are_not_approved) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 3.026s
+
+OK

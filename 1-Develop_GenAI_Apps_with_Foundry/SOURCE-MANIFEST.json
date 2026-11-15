@@ -1,0 +1,97 @@
+{
+  "repository": "https://github.com/MicrosoftLearning/mslearn-ai-studio",
+  "commit": "b702dc2fd9f9411b5eb1f86b9259db6515cd9c48",
+  "raw_base_url": "https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/b702dc2fd9f9411b5eb1f86b9259db6515cd9c48/",
+  "files": [
+    {
+      "local": "UPSTREAM-LICENSE.txt",
+      "upstream": "LICENSE",
+      "sha256": "90e5ef67a83a024f733578fb539e26e11b31a8b92a15b5fa579a7c47918c25b6"
+    },
+    {
+      "local": "01-plan-and-prepare/upstream-guide.md",
+      "upstream": "Instructions/Exercises/01-Explore-ai-studio.md",
+      "sha256": "41d7ba93407659945d696068044042caab0b8e57242ad57ff1657658a2e71e4c"
+    },
+    {
+      "local": "media/foundry-portal-home.png",
+      "upstream": "Instructions/media/foundry-portal-home.png",
+      "sha256": "85d521b40a7ec4a6a41ec29b7b965534a217fc1ce535ac5e0da5c8429ea464a8"
+    },
+    {
+      "local": "media/gpt5.2-details.png",
+      "upstream": "Instructions/media/gpt5.2-details.png",
+      "sha256": "a1c109e5d20e09cd51756c6a667f1502fdf9dfa6d32350faa4306bc782bc7140"
+    },
+    {
+      "local": "media/ai-foundry-model-playground.png",
+      "upstream": "Instructions/media/ai-foundry-model-playground.png",
+      "sha256": "3b7f2aa7a317240f99586abb53c19892503ca7394fd838e16c754970d631f56e"
+    },
+    {
+      "local": "media/ai-foundry-manage.png",
+      "upstream": "Instructions/media/ai-foundry-manage.png",
+      "sha256": "b73e0c1ab5546c1cb983444ec6144ac7c5c5f74bc135c686f3a01aba07340c6d"
+    },
+    {
+      "local": "media/foundry-vs-extension.png",
+      "upstream": "Instructions/media/foundry-vs-extension.png",
+      "sha256": "80d193941a7823a30a63ee020676a6d98288fd57442c942b0360e49d4c291e0b"
+    },
+    {
+      "local": "media/vscode-extension-model.png",
+      "upstream": "Instructions/media/vscode-extension-model.png",
+      "sha256": "48faf76fa676381e4f5a336db61a122271a33b78b33d8cde83f0738d8c8cf34e"
+    },
+    {
+      "local": "media/vscode-model-playground.png",
+      "upstream": "Instructions/media/vscode-model-playground.png",
+      "sha256": "566afc9411a34910e920d3b0588251ec4b0195143e23691ef0195e7ec8566f9e"
+    },
+    {
+      "local": "02-model-catalog-evaluation/upstream-guide.md",
+      "upstream": "Instructions/Exercises/02-model-catalog-evaluation.md",
+      "sha256": "3bafc76e79b87177f80739106899549b3100327341e75c1a0c7c8d0a06fdca4d"
+    },
+    {
+      "local": "03-foundry-sdk/upstream-guide.md",
+      "upstream": "Instructions/Exercises/03-foundry-sdk.md",
+      "sha256": "c34ed973be7847ab7143363d86c595bbb33fd6b36e25fa6d016c7be06d49d7e2"
+    },
+    {
+      "local": "03-foundry-sdk/upstream/.env.example",
+      "upstream": "labfiles/foundry-chat/python/chat-app/.env",
+      "sha256": "414f1e2a8ff11e13b20041208e8e101f3c961e96baedb350b05a6e698cbfd58b"
+    },
+    {
+      "local": "03-foundry-sdk/upstream/chat-app.py",
+      "upstream": "labfiles/foundry-chat/python/chat-app/chat-app.py",
+      "sha256": "dfb562be2e8a7a186c2df8d1de20ce9af0a2c565f8c0f8fbed1305f79ea4ea88"
+    },
+    {
+      "local": "03-foundry-sdk/upstream/chat-async.py",
+      "upstream": "labfiles/foundry-chat/python/chat-app/chat-async.py",
+      "sha256": "748e5effeb8f804ec3eac141f9156ab61e09912b7388a8a31479025a7182d12a"
+    },
+    {
+      "local": "03-foundry-sdk/upstream/requirements.txt",
+      "upstream": "labfiles/foundry-chat/python/chat-app/requirements.txt",
+      "sha256": "ccd7338c8d37d1be63cd4d6aa4169d5931d446462644b59bdb93a8aae062fc59"
+    },
+    {
+      "local": "z05-optimize-fine-tuning/upstream-guide.md",
+      "upstream": "Instructions/Exercises/04b-finetune-model.md",
+      "sha256": "1523c246a15892049591dcc52b5f1c90f56861ffe7d272fefae10899598c89b7"
+    },
+    {
+      "local": "z05-optimize-fine-tuning/data/travel-finetune-hotel.jsonl",
+      "upstream": "data/travel-finetune-hotel.jsonl",
+      "sha256": "726b18a808e4d0edd9fdff3a48ec327356cd4b0ab198e38dd555d6004f9e4411"
+    },
+    {
+      "local": "05-responsible-ai-content-filters/upstream-guide.md",
+      "upstream": "Instructions/Exercises/06-Explore-content-filters.md",
+      "sha256": "3d0b68743c707bf6456495d8db2a401851bd6d589ef4e4f31d3f6158f33741c2"
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+[1/4] Loading the Foundry project and deployment configuration...
+Selected deployment: [REDACTED_MODEL_DEPLOYMENT_NAME]
+This example retrieves public documentation and prints commands; it does not run them or deploy resources.
+[2/4] Connecting to Foundry with Microsoft Entra authentication...
+[3/4] Creating an agent version with remote MCP server https://learn.microsoft.com/api/mcp...
+Requests from this configured server are automatically approved for this demonstration.
+Created agent version: [REDACTED]
+[4/4] Creating a conversation and sending the fixed sample prompt...
+Conversation created: [REDACTED]
+Prompt: Give me the Azure CLI commands to create an Azure Container App with a managed identity.
+[Request] Waiting for the agent's response or MCP approval requests...
+[MCP] Foundry discovered 3 tools from api-specs.
+[Approval] Automatically approving microsoft_docs_search on the configured Microsoft Learn server.
+[Request] Returning 1 approval(s). Waiting for tool execution and the next response...
+[MCP] Completed remote tool call: api-specs / microsoft_docs_search
+[Approval] Automatically approving microsoft_docs_fetch on the configured Microsoft Learn server.
+[Request] Returning 1 approval(s). Waiting for tool execution and the next response...
+[MCP] Completed remote tool call: api-specs / microsoft_docs_fetch
+[Approval] Automatically approving microsoft_docs_search on the configured Microsoft Learn server.
+[Request] Returning 1 approval(s). Waiting for tool execution and the next response...
+[MCP] Completed remote tool call: api-specs / microsoft_docs_search
+[Approval] Automatically approving microsoft_docs_search on the configured Microsoft Learn server.
+[Request] Returning 1 approval(s). Waiting for tool execution and the next response...
+[MCP] Completed remote tool call: api-specs / microsoft_docs_search
+
+Agent response:
+Below are Azure CLI commands for both common options: **system-assigned managed identity** and **user-assigned managed identity**. Replace the placeholder values before running.
+
+## 1) Prerequisites / setup
+
+```bash
+az login
+
+az extension add --name containerapp --upgrade
+
+az provider register --namespace Microsoft.App
+az provider register --namespace Microsoft.OperationalInsights
+```
+
+Set variables:
+
+```bash
+RESOURCE_GROUP="rg-aca-demo"
+LOCATION="eastus"
+ENVIRONMENT="aca-env-demo"
+APP_NAME="aca-mi-demo"
+IMAGE="mcr.microsoft.com/azuredocs/containerapps-helloworld:latest"
+```
+
+Create the resource group and Container Apps environment:
+
+```bash
+az group create \
+  --name "$RESOURCE_GROUP" \
+  --location "$LOCATION"
+
+az containerapp env create \
+  --name "$ENVIRONMENT" \
+  --resource-group "$RESOURCE_GROUP" \
+  --location "$LOCATION"
+```
+
+---
+
+## Option A: Create the Container App with a system-assigned managed identity
+
+```bash
+az containerapp create \
+  --name "$APP_NAME" \
+  --resource-group "$RESOURCE_GROUP" \
+  --environment "$ENVIRONMENT" \
+  --image "$IMAGE" \
+  --ingress external \
+  --target-port 80 \
+  --system-assigned
+```
+
+Get the managed identity principal ID:
+
+```bash
+PRINCIPAL_ID=$(az containerapp show \
+  --name "$APP_NAME" \
+  --resource-group "$RESOURCE_GROUP" \
+  --query "identity.principalId" \
+  --output tsv)
+
+echo "$PRINCIPAL_ID"
+```
+
+---
+
+## Option B: Create the Container App with a user-assigned managed identity
+
+Set an identity name:
+
+```bash
+IDENTITY_NAME="uami-aca-demo"
+```
+
+Create the user-assigned managed identity:
+
+```bash
+az identity create \
+  --name "$IDENTITY_NAME" \
+  --resource-group "$RESOURCE_GROUP"
+```
+
+Get the identity resource ID:
+
+```bash
+IDENTITY_ID=$(az identity show \
+  --name "$IDENTITY_NAME" \
+  --resource-group "$RESOURCE_GROUP" \
+  --query "id" \
+  --output tsv)
+
+echo "$IDENTITY_ID"
+```
+
+Create the Container App and attach the user-assigned identity:
+
+```bash
+az containerapp create \
+  --name "$APP_NAME" \
+  --resource-group "$RESOURCE_GROUP" \
+  --environment "$ENVIRONMENT" \
+  --image "$IMAGE" \
+  --ingress external \
+  --target-port 80 \
+  --user-assigned "$IDENTITY_ID"
+```
+
+---
+
+## Verify the identity on the Container App
+
+```bash
+az containerapp identity show \
+  --name "$APP_NAME" \
+  --resource-group "$RESOURCE_GROUP"
+```
+
+## Important note
+
+Creating the managed identity only gives the app an identity. To let it access another Azure resource, such as Key Vault, Storage, or SQL, you must also grant that identity the appropriate Azure RBAC role or resource permission.
+[Cleanup] Deleting only the created agent version: [REDACTED]...
+[Cleanup] Created agent version deleted.
+[Complete] Hosted MCP example finished. The cloud conversation is not deleted.

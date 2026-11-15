@@ -1,0 +1,69 @@
+# Local credentials, resource configuration, and authentication caches
+.env
+.env.*
+!.env.example
+!.env.template
+.azure/
+.azd/
+**/secrets/
+*.pem
+*.key
+*.pfx
+*.p12
+credentials.json
+service-account*.json
+
+# Virtual environments, Python caches, and local tooling
+.labenv/
+.venv/
+venv/
+labenv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.vs/
+.vscode/
+node_modules/
+
+# Generated analysis, validation, and other potentially identifying output
+/2_Develop_AI_Agents_with_Azure/08-mcpintegration/results/
+/2_Develop_AI_Agents_with_Azure/09-integrateFoundryIQ/results/
+/2_Develop_AI_Agents_with_Azure/z10a-m365-teams-integration/results/
+/2_Develop_AI_Agents_with_Azure/z10b-work-iq-integration/results/
+results.json
+results-*.json
+validation-results.json
+analysis-results*.json
+*output*.txt
+transcript*.txt
+transcript*.json
+lion-cu-analysis.jpg
+/4_Extract_Insights_From_Visual_Data_On_Azure/06-create-content-understanding-client-app/biz-card-*.png
+/4_Extract_Insights_From_Visual_Data_On_Azure/01-generate-images-with-ai/images/image_*.png
+/3_Develop_Language_Soltns_with_AzureAI/03-gen-ai-speech/generate-speech/speech.mp3
+/3_Develop_Language_Soltns_with_AzureAI/04-azure-speech/voice-mail/greeting.wav
+# Local document/recording inputs can contain contacts, addresses, or voices.
+/4_Extract_Insights_From_Visual_Data_On_Azure/05-create-multi-modal-analysis-with-content-understanding/content/
+screenshots/
+recordings/
+uploads/
+*.log
+*.tmp
+*.bak
+
+# Local operating-system files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Downloaded reference checkouts and archives (not the maintained lab code)
+**/z_src*/
+**/downloads/
+
+# Module 01 reports can contain prompts, responses, and Azure resource metadata.
+/01-Develop_GenAI_Apps_with_Foundry/**/results/
+/1-Develop_GenAI_Apps_with_Foundry/**/results/

@@ -1,0 +1,107 @@
+[Setup] Loading this lab's project and deployment configuration...
+Selected deployment: [REDACTED_MODEL_DEPLOYMENT_NAME]
+Inventory/sales are static samples. Model calls may incur charges; no orders or stock changes are made.
+[MCP] Starting server.py with this client's Python interpreter over stdio...
+[MCP] Initializing the local protocol session...
+[Server] Starting the sample Inventory MCP server over stdio.
+[11/14/26 22:25:26] INFO     Starting MCP server 'Inventory'   transport.py:242
+                             with transport 'stdio'                            
+[Discovery] Listing the inventory server's available tools...
+Connected to server with tools: ['get_inventory_levels', 'get_weekly_sales']
+[Bridge] Exposing get_inventory_levels as a Foundry function tool.
+[Bridge] Exposing get_weekly_sales as a Foundry function tool.
+[Connect] Connecting to Foundry with Microsoft Entra authentication...
+[Agent] Creating an inventory-agent version using the discovered tools...
+Created agent version: [REDACTED]
+Conversation created: [REDACTED]
+Follow-ups reuse this conversation; old function outputs are not resubmitted.
+Enter a prompt for the inventory agent. Use 'quit' to exit.
+USER: 
+[Input] Please enter a prompt. No model request was sent.
+Enter a prompt for the inventory agent. Use 'quit' to exit.
+USER: Show me the current inventory levels for all products.
+[Conversation] Adding your question to the current conversation...
+[Request] Asking the agent to answer or request an inventory tool...
+[Tool] Agent requested get_inventory_levels; calling the local MCP server...
+[Server tool] Returning sample inventory levels for 10 products.
+[Tool result] {"Moisturizer": 6, "Shampoo": 8, "Body Spray": 28, "Hair Gel": 5, "Lip Balm": 12, "Skin Serum": 9, "Cleanser": 30, "Conditioner": 3, "Setting Powder": 17, "Dry Shampoo": 45}
+[Request] Returning 1 current tool result(s) to the agent. Waiting for the next response...
+Agent response: Current inventory levels:
+
+| Product | Units in stock |
+|---|---:|
+| Moisturizer | 6 |
+| Shampoo | 8 |
+| Body Spray | 28 |
+| Hair Gel | 5 |
+| Lip Balm | 12 |
+| Skin Serum | 9 |
+| Cleanser | 30 |
+| Conditioner | 3 |
+| Setting Powder | 17 |
+| Dry Shampoo | 45 |
+Enter a prompt for the inventory agent. Use 'quit' to exit.
+USER: Are there any products that should be restocked?
+[Conversation] Adding your question to the current conversation...
+[Request] Asking the agent to answer or request an inventory tool...
+[Tool] Agent requested get_inventory_levels; calling the local MCP server...
+[Server tool] Returning sample inventory levels for 10 products.
+[Tool result] {"Moisturizer": 6, "Shampoo": 8, "Body Spray": 28, "Hair Gel": 5, "Lip Balm": 12, "Skin Serum": 9, "Cleanser": 30, "Conditioner": 3, "Setting Powder": 17, "Dry Shampoo": 45}
+[Tool] Agent requested get_weekly_sales; calling the local MCP server...
+[Server tool] Returning sample last-week sales for 10 products.
+[Tool result] {"Moisturizer": 22, "Shampoo": 18, "Body Spray": 3, "Hair Gel": 2, "Lip Balm": 14, "Skin Serum": 19, "Cleanser": 4, "Conditioner": 1, "Setting Powder": 13, "Dry Shampoo": 17}
+[Request] Returning 2 current tool result(s) to the agent. Waiting for the next response...
+Agent response: Yes. Based on the restock rule — **inventory < 10** and **last week’s sales > 15** — these products should be restocked:
+
+| Product | Inventory | Units sold last week | Recommendation |
+|---|---:|---:|---|
+| Moisturizer | 6 | 22 | Restock |
+| Shampoo | 8 | 18 | Restock |
+| Skin Serum | 9 | 19 | Restock |
+
+Other low-inventory items like **Hair Gel** and **Conditioner** do not meet the sales threshold, so I would not recommend restocking them based on this rule.
+Enter a prompt for the inventory agent. Use 'quit' to exit.
+USER: Which products would you recommend for clearance?
+[Conversation] Adding your question to the current conversation...
+[Request] Asking the agent to answer or request an inventory tool...
+[Tool] Agent requested get_inventory_levels; calling the local MCP server...
+[Server tool] Returning sample inventory levels for 10 products.
+[Tool result] {"Moisturizer": 6, "Shampoo": 8, "Body Spray": 28, "Hair Gel": 5, "Lip Balm": 12, "Skin Serum": 9, "Cleanser": 30, "Conditioner": 3, "Setting Powder": 17, "Dry Shampoo": 45}
+[Tool] Agent requested get_weekly_sales; calling the local MCP server...
+[Server tool] Returning sample last-week sales for 10 products.
+[Tool result] {"Moisturizer": 22, "Shampoo": 18, "Body Spray": 3, "Hair Gel": 2, "Lip Balm": 14, "Skin Serum": 19, "Cleanser": 4, "Conditioner": 1, "Setting Powder": 13, "Dry Shampoo": 17}
+[Request] Returning 2 current tool result(s) to the agent. Waiting for the next response...
+Agent response: Based on the clearance rule — **inventory > 20** and **last week’s sales < 5** — I recommend clearance for:
+
+| Product | Inventory | Units sold last week | Recommendation |
+|---|---:|---:|---|
+| Body Spray | 28 | 3 | Clearance |
+| Cleanser | 30 | 4 | Clearance |
+
+**Dry Shampoo** has high inventory at 45 units, but it sold 17 units last week, so it does **not** meet the clearance criteria.
+Enter a prompt for the inventory agent. Use 'quit' to exit.
+USER: What are the best sellers this week?
+[Conversation] Adding your question to the current conversation...
+[Request] Asking the agent to answer or request an inventory tool...
+[Tool] Agent requested get_weekly_sales; calling the local MCP server...
+[Server tool] Returning sample last-week sales for 10 products.
+[Tool result] {"Moisturizer": 22, "Shampoo": 18, "Body Spray": 3, "Hair Gel": 2, "Lip Balm": 14, "Skin Serum": 19, "Cleanser": 4, "Conditioner": 1, "Setting Powder": 13, "Dry Shampoo": 17}
+[Request] Returning 1 current tool result(s) to the agent. Waiting for the next response...
+Agent response: I don’t have current-week sales data, so I can’t identify this week’s best sellers.
+
+Using **last week’s sales**, the top sellers were:
+
+| Rank | Product | Units sold last week |
+|---:|---|---:|
+| 1 | Moisturizer | 22 |
+| 2 | Skin Serum | 19 |
+| 3 | Shampoo | 18 |
+| 4 | Dry Shampoo | 17 |
+| 5 | Lip Balm | 14 |
+Enter a prompt for the inventory agent. Use 'quit' to exit.
+USER: quit
+Exiting chat.
+[Cleanup] Deleting only the created agent version: [REDACTED]...
+[Cleanup] Created inventory agent version deleted.
+[Cleanup] Closing the MCP session, stdio transport, and local server process...
+[Complete] Local MCP example finished. The cloud conversation is not deleted.
