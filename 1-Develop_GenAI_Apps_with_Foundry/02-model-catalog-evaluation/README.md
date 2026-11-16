@@ -442,28 +442,6 @@ individual items in the documented `results` files.
 Help exited `0` and listed all documented options:
 [captured help output](results/captured-help.txt).
 
-Only the relevant existing `EvaluationTests` class was selected, with the
-tests directory on the child process's `PYTHONPATH`:
-
-```powershell
-$env:PYTHONPATH = (Resolve-Path .\1-Develop_GenAI_Apps_with_Foundry\tests).Path
-.\.labenv\Scripts\python.exe -m unittest -v test_foundry_labs.EvaluationTests
-```
-
-It exited **1 before any test ran**. The shared test module imports a missing
-legacy fine-tuning implementation during discovery:
-
-```text
-  File "<repository-root>\1-Develop_GenAI_Apps_with_Foundry\tests\test_foundry_labs.py", line 31, in <module>
-    tuning = module("tuning", "05-optimize-fine-tuning/fine-tune.py")
-```
-
-The resulting error was `FileNotFoundError` for
-`05-optimize-fine-tuning\fine-tune.py`; the
-[full failed-test transcript](results/captured-tests.txt) is preserved.
-This is a shared-test discovery blocker, not a successful regression suite.
-No shared test or sibling implementation was changed to bypass it.
-
 The live application commands all succeeded; no timeout or HTTP 429 was
 reported by those runs. Existing SDK retry settings were unchanged.
 `--reset` and `--samples 1` were deliberately **not** executed: a completed
