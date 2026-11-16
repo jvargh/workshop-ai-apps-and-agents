@@ -1,5 +1,8 @@
 # Workshop: AI Apps and Agents with Microsoft Foundry
 
+- [Module 1 PDF - Develop generative AI apps in Azure](AI-103T00-ENU-Module01-DevelopGenerativeAIAppsInAzure%E2%80%8B.pdf)
+- [Module 2 PDF - Develop AI agents on Azure](AI-103T00-ENU-Module02-DevelopAIAgentsonAzure.pdf)
+
 Hands-on Python labs for developing generative AI applications and AI agents
 with Microsoft Foundry and Azure. The repository contains **two modules and
 16 lab guides**, with per-lab configuration templates, dependencies, sample
