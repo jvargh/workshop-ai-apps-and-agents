@@ -153,11 +153,11 @@ not a guarantee that your configuration has been validated.
   upstream guides, starter code, a [source manifest](1-Develop_GenAI_Apps_with_Foundry/SOURCE-MANIFEST.json),
   and the [upstream MIT license](1-Develop_GenAI_Apps_with_Foundry/UPSTREAM-LICENSE.txt).
   Follow each lab's official-guide links for its source and portal setup.
-- [Git ignore rules](.gitignore) exclude local environment files, virtual
-  environments, caches, downloaded reference checkouts, and selected generated
-  output. Not every report filename is ignored: review new files before staging.
-  Never publish credentials, workplace content, private transcripts, or
-  unsanitized resource configuration.
+- Root Git ignore and attributes configuration files are local-only and are
+  not included in clones. Configure local ignore rules for environment files,
+  virtual environments, caches, downloaded reference checkouts, and generated
+  output before running labs or staging files. Never publish credentials,
+  workplace content, private transcripts, or unsanitized resource configuration.
 - Use synthetic data. Work IQ can access authorized Microsoft 365 content;
   Azure sign-in and workplace-data authorization are separate.
 - Model inference, evaluation, fine-tuning, Search, and hosted resources can

@@ -1,4 +1,0 @@
-UPSTREAM-LICENSE.txt text eol=lf
-03-foundry-sdk/upstream/.env.example text eol=lf
-03-foundry-sdk/upstream/requirements.txt text eol=lf
-z05-optimize-fine-tuning/data/*.jsonl text eol=lf
