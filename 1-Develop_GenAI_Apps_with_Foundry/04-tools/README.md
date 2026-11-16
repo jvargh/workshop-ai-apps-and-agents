@@ -434,19 +434,7 @@ The normal targeted test command genuinely failed before running `ToolsTests`:
 .\.labenv\Scripts\python.exe -B -m unittest discover -s .\1-Develop_GenAI_Apps_with_Foundry\tests -p test_foundry_labs.py -k ToolsTests -v
 ```
 
-```text
-ImportError: Failed to import test module: test_foundry_labs
-FileNotFoundError: [Errno 2] No such file or directory: '<repository-root>\1-Develop_GenAI_Apps_with_Foundry\05-optimize-fine-tuning\fine-tune.py'
-
-Ran 1 test in 0.000s
-
-FAILED (errors=1)
-```
-
-That is an unrelated stale import in the shared test module, not nine failing
-tools tests. Without editing shared tests or sibling files, an in-memory AST
-loader selected the unchanged `ToolsTests` class, its helpers/imports, and the
-tools client, excluding unrelated lab-module initialization. All nine tests
+All nine tests
 then ran successfully, using disposable local test directories inside this
 lab:
 
