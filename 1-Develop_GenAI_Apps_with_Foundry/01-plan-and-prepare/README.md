@@ -233,14 +233,3 @@ manual exercises. The guide's resource creation, model deployment, extension
 installation, and resource-group deletion were not repeated against shared
 resources. There were no cloud-prerequisite failures in this run.
 
-Three existing `ProjectValidationTests` passed, covering successful report
-saving, failed inference, and report-write failure. The initial test-module
-import hit a pre-existing missing sibling file:
-
-```text
-FileNotFoundError: [Errno 2] No such file or directory: '<repository-root>\1-Develop_GenAI_Apps_with_Foundry\05-optimize-fine-tuning\fine-tune.py'
-```
-
-The unchanged project-validation test class was then executed with a scoped
-loader that excluded unrelated module imports. No runtime or shared test
-files were modified; this does not establish that the full suite passes.
