@@ -20,10 +20,6 @@ history, and cleanup limitations.
 |---|---|
 | [01 - Plan and prepare](1-Develop_GenAI_Apps_with_Foundry/01-plan-and-prepare/README.md) | Inspect existing project/model deployments and verify live inference. |
 | [02 - Model catalog and evaluation](1-Develop_GenAI_Apps_with_Foundry/02-model-catalog-evaluation/README.md) | Compare deployed models and run or resume cloud evaluation. |
-| [03 - Foundry SDK app](1-Develop_GenAI_Apps_with_Foundry/03-foundry-sdk/README.md) | Use the OpenAI SDK for Chat Completions, Responses, history, streaming, and async calls. |
-| [04 - Chat with tools](1-Develop_GenAI_Apps_with_Foundry/04-tools/README.md) | Combine brochure file search, web search, and conversation history. |
-| [05 - Responsible AI](1-Develop_GenAI_Apps_with_Foundry/05-responsible-ai-content-filters/README.md) | Audit assigned content-filter policies and inspect an unapplied policy template. |
-| [z05 - Optimize and fine-tune](1-Develop_GenAI_Apps_with_Foundry/z05-optimize-fine-tuning/README.md) | Validate an SFT dataset, test prompting, and optionally compare an already deployed fine-tuned model; training is not submitted automatically. |
 
 ### 2. Develop AI agents with Azure
 
